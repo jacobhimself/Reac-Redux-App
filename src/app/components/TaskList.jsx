@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-export const TaskList = ({tasks, name}) =>(
+export const TaskList = ({tasks, groupName}) =>(
     <div>
         <h3>
-            {name}
+            {groupName}
         </h3>
         <div>
             {tasks.map(task=>(<div>{task.name}</div>))}
@@ -13,10 +13,11 @@ export const TaskList = ({tasks, name}) =>(
 )
 
 const mapStateToProps = (state, ownProps) =>{
-    let groupID = ownProps.id;
+    let groupID = ownProps.groupId;
+    
     return {
-        name:ownProps.name,
-        id:groupID,
+        groupName:ownProps.groupName,
+        groupID:ownProps.groupId,
         tasks:state.tasks.filter(task=>task.group  == groupID)
     }
 };

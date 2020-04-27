@@ -47,6 +47,12 @@ export const defaultState = {
         group:"G1",
         owner:"U1",
         isComplete:false
+    },{
+        name: "This is a test",
+        id:"T4",
+        group:"G2",
+        owner:"U1",
+        isComplete:false
     }],
     comments:[{
         owner:"U1",
